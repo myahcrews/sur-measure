@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FaceCanvas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section class="intro">
+            <p class="label">
+                FACECANVAS / V2
+            </p>
+
+            <h1>Understand your face.</h1>
+
+            <p class="description">
+                Upload a front-facing photo to begin your facial analysis.
+            </p>
+        </section>
+
+        <section class="upload-section">
+            <label for="photo-upload" class="upload-button">
+                CHOOSE PHOTO
+            </label>
+
+            <input
+                type="file"
+                id="photo-upload"
+                accept="image/*"
+            >
+
+            <div class="image-container">
+                <p id="placeholder-text">
+                    Your image will appear here.
+                </p>
+
+                <img
+                    id="preview-image"
+                    alt="Uploaded face preview"
+                >
+
+                <canvas id="landmark-canvas"></canvas>
+            </div>
+        </section>
+
+        <section
+            id="measurements-section"
+            hidden
+            aria-live="polite"
+        ><h2>Your face-shape estimate</h2>
+
+<p id="face-shape">—</p>
+
+<p>
+    Preliminary estimate based on facial proportions.
+</p>
+            <h2>Your facial measurements</h2>
+<p>
+    Line colors:
+    amber = forehead,
+    cyan = cheeks,
+    purple = jaw,
+    green = face height,
+    pink = eye widths.
+</p>
+    Forehead width estimate:
+    <span id="forehead-width">—</span>
+</p>
+
+<p>
+    Jaw width estimate:
+    <span id="jaw-width">—</span>
+</p>
+
+<p>
+    Forehead width relative to cheek width:
+    <span id="forehead-ratio">—</span>
+</p>
+
+<p>
+    Jaw width relative to cheek width:
+    <span id="jaw-ratio">—</span>
+</p>
+            <p>
+                Face width:
+                <span id="face-width">—</span>
+            </p>
+
+            <p>
+                Face height:
+                <span id="face-height">—</span>
+            </p>
+
+            <p>
+                Height-to-width ratio:
+                <span id="face-ratio">—</span>
+            </p>
+<h3>Eye measurements</h3>
+<p>
+    Your right eye opening:
+    <span id="right-eye-opening">—</span>
+</p>
+
+<p>
+    Your left eye opening:
+    <span id="left-eye-opening">—</span>
+</p>
+    Your right eye tilt:
+    <span id="right-eye-tilt">—</span>
+</p>
+
+<p>
+    Your left eye tilt:
+    <span id="left-eye-tilt">—</span>
+</p>
+<p>
+    Your right eye width:
+    <span id="right-eye-width">—</span>
+</p>
+
+<p>
+    Your left eye width:
+    <span id="left-eye-width">—</span>
+</p>
+
+<p>
+    Your right eye width relative to face:
+    <span id="right-eye-ratio">—</span>
+</p>
+
+<p>
+    Your left eye width relative to face:
+    <span id="left-eye-ratio">—</span>
+</p>
+            <p>
+                Measurements are estimates in image pixels.
+                Use a straight-on photo with your head upright.
+            </p>
+        </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
